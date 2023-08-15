@@ -6,18 +6,19 @@ export class App extends Component {
   
 state = {
   contacts: [],
-  name: ''
+  name: '',
+  number: ''
 }
 
   
   handleNameSet = e => {
     e.preventDefault();
-    const { name } = e.currentTarget;
-    console.log(this.state.contacts)
-    const newContact = { id: nanoid(), name: name.value };
+    const { name, number } = e.currentTarget.elements;
+    const newContact = { id: nanoid(), name: name.value, number: number.value, };
     this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact], 
-      name: '' 
+      name: '',
+      number: ''
     }));
      e.currentTarget.reset();
   }
@@ -39,12 +40,24 @@ state = {
         onChange={e => this.setState({ name: e.target.value })}
           />
         </label>
+        <label htmlFor={this.loginInputId}>
+          <span>Number</span>
+          <input
+        type="tel"
+        name="number"
+        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+        required
+        value={this.state.number} 
+        onChange={e => this.setState({ number: e.target.value })}
+          />
+        </label>
        <button type="submit">Add contact</button>
       </form>
         <h2>Contacts</h2>
         <ul>
         {this.state.contacts.map(contact => (
-            <li key={contact.id}>{contact.name}</li> 
+          <li key={contact.id}>{contact.name}: {contact.number}</li> 
           ))}
         </ul>
 </div>
