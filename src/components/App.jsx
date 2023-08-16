@@ -56,7 +56,8 @@ filterContacts = () => {
 
   render() {
 
-    return (<div>
+    return (
+      <div>
       <h1>Phonebook</h1>
       <ContactForm addContactName={this.handleNameSet} setNanoidId={this.loginInputId} onChangeName={e => this.setState({ name: e.target.value })} onChangeNumber={e => this.setState({ number: e.target.value })} nameInpytValue={this.state.name} numberIputValue={this.state.number } />
      
