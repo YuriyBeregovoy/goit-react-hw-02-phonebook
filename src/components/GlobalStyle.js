@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
 
 
 body {
-  min-width: 320px;
     color: #434455;
   font-size: 14px;
   line-height: 1.5;
@@ -27,7 +26,6 @@ h5,
 h6,
 p {
   margin: 0;
-  text-align: center;
 }
 
 ul {
