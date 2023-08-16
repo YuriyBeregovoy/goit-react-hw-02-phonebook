@@ -1,6 +1,8 @@
+import { FormButton, FormContacts, LabelContacts } from "./ContactForm.styled"
+
 export const ContactForm = ({addContactName, setNanoidId, onChangeName, onChangeNumber, nameInpytValue, numberIputValue }) => {
-  return  <form onSubmit={addContactName}>
-      <label htmlFor={setNanoidId}>
+  return  <FormContacts onSubmit={addContactName}>
+      <LabelContacts htmlFor={setNanoidId}>
           <span>Name</span>
           <input
         id={setNanoidId}
@@ -12,8 +14,8 @@ export const ContactForm = ({addContactName, setNanoidId, onChangeName, onChange
         value={nameInpytValue} 
         onChange={onChangeName}
           />
-        </label>
-        <label>
+        </LabelContacts>
+        <LabelContacts>
           <span>Number</span>
           <input
         type="tel"
@@ -24,7 +26,7 @@ export const ContactForm = ({addContactName, setNanoidId, onChangeName, onChange
         value={numberIputValue} 
         onChange={onChangeNumber}
           />
-        </label>
-       <button type="submit">Add contact</button>
-      </form>
+        </LabelContacts>
+       <FormButton type="submit">Add contact</FormButton>
+      </FormContacts>
 }
