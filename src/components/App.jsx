@@ -2,6 +2,7 @@ import { Component } from "react"
 import { nanoid } from 'nanoid'
 import { ContactForm } from "./ContactForm/ContactForm";
 import { ContactList } from "./ContactList/ContactList";
+import { Filter } from "./Filter/Filter";
 
 export class App extends Component {
   loginInputId = nanoid();
@@ -60,16 +61,7 @@ filterContacts = () => {
       <ContactForm addContactName={this.handleNameSet} setNanoidId={this.loginInputId} onChangeName={e => this.setState({ name: e.target.value })} onChangeNumber={e => this.setState({ number: e.target.value })} nameInpytValue={this.state.name} numberIputValue={this.state.number } />
      
       <h2>Contacts</h2>
-
-      <label>
-          <span>Find contacts by name</span>
-          <input
-        type="text"
-        value={this.state.filter} 
-        onChange={e => this.setState({ filter: e.target.value })}
-          />
-        </label>
-      
+      <Filter filterInputValue={this.state.filter} onChangeInputFilter={e => this.setState({ filter: e.target.value })} />
       <ContactList contacts={this.filterContacts()} onContactDelete={this.handleContactDelete} />
 </div>
   );}
