@@ -4,10 +4,8 @@ export const FormContacts = styled.form`
 display: flex;
 flex-direction: column;
 gap: 20px;
-margin-top: 10px;
-margin-bottom: 10px;
 max-width: 375px;
-padding: 40px;
+padding: 10px 40px 10px 40px;
 `;
 
 export const LabelContacts = styled.label`
