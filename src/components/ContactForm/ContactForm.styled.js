@@ -4,7 +4,7 @@ export const FormContacts = styled.form`
 display: flex;
 flex-direction: column;
 gap: 10px;
-
+min-width: 260px;
 margin-bottom: 20px;
 `;
 
