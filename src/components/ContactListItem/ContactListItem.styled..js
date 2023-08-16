@@ -23,3 +23,10 @@ export const ItemButton = styled.button`
 
 
 `;
+
+export const Item = styled.li`
+display: flex;
+gap: 20px;
+justify-content: space-between;
+align-items: center;
+`;
