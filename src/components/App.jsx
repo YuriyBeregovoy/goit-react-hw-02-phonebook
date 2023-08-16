@@ -20,11 +20,16 @@ state = {
     e.preventDefault();
     const { name, number } = e.currentTarget.elements;
     const newContact = { id: nanoid(), name: name.value, number: number.value, };
-    this.setState(prevState => ({
+
+    const isExistingContact = this.state.contacts
+    .map((contact) => contact.name.toLowerCase())
+    .includes(name.value.toLowerCase());
+      
+   if (!isExistingContact) { this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact], 
       name: '',
       number: ''
-    }));
+    }));} else { alert(`${name.value} is already in contacts!`)}
      e.currentTarget.reset();
   }
 
@@ -34,7 +39,7 @@ filterContacts = () => {
    return  contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase())
   );
-  
+ 
 };
 
   
