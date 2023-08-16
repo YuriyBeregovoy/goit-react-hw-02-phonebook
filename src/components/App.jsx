@@ -1,5 +1,6 @@
 import { Component } from "react"
 import { nanoid } from 'nanoid'
+import { ContactForm } from "./ContactForm/ContactForm";
 
 export class App extends Component {
   loginInputId = nanoid();
@@ -55,35 +56,8 @@ filterContacts = () => {
 
     return (<div>
       <h1>Phonebook</h1>
-      <form onSubmit={this.handleNameSet}>
-      <label htmlFor={this.loginInputId}>
-          <span>Name</span>
-          <input
-        id={this.loginInputId}
-        type="text"
-        name="name"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-        value={this.state.name} 
-        onChange={e => this.setState({ name: e.target.value })}
-          />
-        </label>
-        <label>
-          <span>Number</span>
-          <input
-        type="tel"
-        name="number"
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-        value={this.state.number} 
-        onChange={e => this.setState({ number: e.target.value })}
-          />
-        </label>
-       <button type="submit">Add contact</button>
-      </form>
-
+      <ContactForm addContactName={this.handleNameSet} setNanoidId={this.loginInputId} onChangeName={e => this.setState({ name: e.target.value })} onChangeNumber={e => this.setState({ number: e.target.value })} nameInpytValue={this.state.name} numberIputValue={this.state.number } />
+     
       <h2>Contacts</h2>
 
       <label>
