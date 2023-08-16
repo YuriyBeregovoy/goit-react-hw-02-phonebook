@@ -1,29 +1,12 @@
 import styled from "styled-components";
 
-export const FormContacts = styled.form`
-display: flex;
-flex-direction: column;
-gap: 10px;
+export const ItemButton = styled.button`
 
-margin-bottom: 20px;
-`;
-
-export const LabelContacts = styled.label`
-display: flex;
-flex-direction: column;
-gap: 5px;
-margin-bottom: 10px;
-`;
-
-export const FormButton = styled.button`
-
-    display: block;
     max-width: 169px;
-    align-self: center;
     padding: 5px 10px;
     font-family: inherit;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1.2;
     text-align: center;
     letter-spacing: 0.04em;
