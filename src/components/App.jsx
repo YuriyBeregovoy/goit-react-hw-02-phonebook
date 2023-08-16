@@ -42,7 +42,14 @@ filterContacts = () => {
  
 };
 
-  
+  handleContactDelete = (contactId) => {
+    this.setState(prevState => {
+      return {
+        contacts: prevState.contacts.filter(contact => contact.id !== contactId)
+      };
+    })
+
+  };
 
   render() {
 
@@ -90,7 +97,10 @@ filterContacts = () => {
       
         <ul>
         {this.filterContacts().map(contact => (
-          <li key={contact.id}>{contact.name}: {contact.number}</li> 
+          <li key={contact.id}>
+            <p>{contact.name}: {contact.number}</p>
+            <button type="button" onClick={() => this.handleContactDelete(contact.id)}>Delete</button>
+          </li> 
           ))}
         </ul>
 </div>
