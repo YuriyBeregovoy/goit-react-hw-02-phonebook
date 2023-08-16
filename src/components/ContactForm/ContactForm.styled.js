@@ -30,12 +30,11 @@ export const FormButton = styled.button`
     color: inherit;
     border: 1px solid gray;
     border-radius: 4px;
-    background-color: #f4f4fd;
+    background-color: white;
 
-    &:hover, :focus 
+    &:hover, &:focus 
     {
     color: #4d5ae5;
-    background-color: white;
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);}
 
