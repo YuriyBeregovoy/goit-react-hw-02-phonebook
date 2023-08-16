@@ -1,6 +1,7 @@
 import { Component } from "react"
 import { nanoid } from 'nanoid'
 import { ContactForm } from "./ContactForm/ContactForm";
+import { ContactList } from "./ContactList/ContactList";
 
 export class App extends Component {
   loginInputId = nanoid();
@@ -69,14 +70,7 @@ filterContacts = () => {
           />
         </label>
       
-        <ul>
-        {this.filterContacts().map(contact => (
-          <li key={contact.id}>
-            <p>{contact.name}: {contact.number}</p>
-            <button type="button" onClick={() => this.handleContactDelete(contact.id)}>Delete</button>
-          </li> 
-          ))}
-        </ul>
+      <ContactList contacts={this.filterContacts()} onContactDelete={this.handleContactDelete} />
 </div>
   );}
 };
