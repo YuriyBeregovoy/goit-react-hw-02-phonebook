@@ -32,7 +32,7 @@ state = {
    if (!isExistingContact) { this.setState(prevState => ({
       contacts: [...prevState.contacts, newContact], 
       name: '',
-      number: ''
+      number: '',
     }));} else { alert(`${name.value} is already in contacts!`)}
      e.currentTarget.reset();
   }
@@ -49,7 +49,9 @@ filterContacts = () => {
   handleContactDelete = (contactId) => {
     this.setState(prevState => {
       return {
-        contacts: prevState.contacts.filter(contact => contact.id !== contactId)
+        contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+        filter: ''
+
       };
     })
 
